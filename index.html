@@ -655,21 +655,12 @@
 
         .logo-slider {
             display: flex;
-            animation: scroll 30s linear infinite;
             gap: 4rem;
+            will-change: transform;
         }
 
         .logo-slider:hover {
-            animation-play-state: paused;
-        }
-
-        @keyframes scroll {
-            0% {
-                transform: translateX(0);
-            }
-            100% {
-                transform: translateX(-50%);
-            }
+            /* Pausing handled by JavaScript */
         }
 
         .logo-item {
@@ -1417,6 +1408,47 @@
             const walk = (x - startX) * 2;
             projectGrid.scrollLeft = scrollLeft - walk;
         });
+
+        // Infinite Logo Slider
+        const logoSlider = document.querySelector('.logo-slider');
+        if (logoSlider) {
+            let scrollPosition = 0;
+            const scrollSpeed = 0.5; // pixels per frame
+            let isPaused = false;
+
+            // Get the width of one complete set of logos (14 logos)
+            const logoItems = logoSlider.querySelectorAll('.logo-item');
+            const oneSetWidth = Array.from(logoItems).slice(0, 14).reduce((total, item) => {
+                return total + item.offsetWidth + 64; // 64 = 4rem gap
+            }, 0);
+
+            function animateSlider() {
+                if (!isPaused) {
+                    scrollPosition -= scrollSpeed;
+                    
+                    // Reset position when one complete set has scrolled
+                    if (Math.abs(scrollPosition) >= oneSetWidth) {
+                        scrollPosition = 0;
+                    }
+                    
+                    logoSlider.style.transform = `translateX(${scrollPosition}px)`;
+                }
+                
+                requestAnimationFrame(animateSlider);
+            }
+
+            // Start animation
+            animateSlider();
+
+            // Pause on hover
+            logoSlider.addEventListener('mouseenter', () => {
+                isPaused = true;
+            });
+
+            logoSlider.addEventListener('mouseleave', () => {
+                isPaused = false;
+            });
+        }
     </script>
 </body>
 </html>
