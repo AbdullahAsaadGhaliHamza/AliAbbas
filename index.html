@@ -39,7 +39,7 @@
             position: fixed;
             pointer-events: none;
             z-index: 9999;
-            transition: all 0.15s ease;
+            transition: all 0.05s ease;
             transform: translate(-50%, -50%);
             mix-blend-mode: difference;
         }
@@ -52,7 +52,7 @@
             position: fixed;
             pointer-events: none;
             z-index: 9998;
-            transition: all 0.3s ease;
+            transition: all 0.15s ease;
             transform: translate(-50%, -50%);
         }
 
@@ -332,7 +332,7 @@
             content: '→';
             margin-left: 10px;
             display: inline-block;
-            animation: slideRight .5s ease infinite;
+            animation: slideRight 1.5s ease infinite;
         }
 
         @keyframes slideRight {
@@ -485,60 +485,74 @@
         }
 
         /* Set background images for project cards */
-        .project-card:nth-child(1) .project-image {
-            background-image: url('Images/MNU.jpg');
-        }
-
-        .project-card:nth-child(2) .project-image {
-            background-image: url('Images/AyaSofia.jpg');
-        }
-
-        .project-card:nth-child(3) .project-image {
-            background-image: url('Images/Jovial.jpg');
-        }
-
-        .project-card:nth-child(4) .project-image {
-            background-image: url('Images/DrHadeel.jpg');
-        }
-
-        .project-card:nth-child(5) .project-image {
-            background-image: url('Images/SkillLabs.jpg');
-        }
-
-        .project-card:nth-child(6) .project-image {
-            background-image: url('Images/Catalyst.png');
-        }
-
-        .project-card:nth-child(7) .project-image {
-            background-image: url('Images/KhanAlSaboun.jpg');
-        }
-
-        .project-card:nth-child(8) .project-image {
-            background-image: url('Images/DrEnglish.jpg');
-        }
-
-        .project-card:nth-child(9) .project-image {
-            background-image: url('Images/AlMuhandisExpress.jpg');
-        }
-
         .project-card:nth-child(10) .project-image {
-            background-image: url('Images/KAWAI.jpg');
-        }
-
-        .project-card:nth-child(11) .project-image {
-            background-image: url('Images/DrCube.jpg');
+            background-image: url('/Images/MNU.jpg');
+            background-color: #f093fb;
         }
 
         .project-card:nth-child(12) .project-image {
-            background-image: url('Images/MEDCafe.jpg');
+            background-image: url('/Images/AyaSofia.jpg');
+            background-color: #4facfe;
+        }
+
+        .project-card:nth-child(5) .project-image {
+            background-image: url('/Images/Jovial.jpg');
+            background-color: #43e97b;
+        }
+
+        .project-card:nth-child(4) .project-image {
+            background-image: url('/Images/DrHadeel.jpg');
+            background-color: #fa709a;
+        }
+
+        .project-card:nth-child(3) .project-image {
+            background-image: url('/Images/SkillLabs.jpg');
+            background-color: #30cfd0;
+        }
+
+        .project-card:nth-child(8) .project-image {
+            background-image: url('/Images/Catalyst.png');
+            background-color: #a8edea;
+        }
+
+        .project-card:nth-child(2) .project-image {
+            background-image: url('/Images/KhanAlSaboun.jpg');
+            background-color: #ff9a56;
+        }
+
+        .project-card:nth-child(1) .project-image {
+            background-image: url('/Images/DrEnglish.jpg');
+            background-color: #667eea;
+        }
+
+        .project-card:nth-child(9) .project-image {
+            background-image: url('/Images/AlMuhandisExpress.jpg');
+            background-color: #ffecd2;
+        }
+
+        .project-card:nth-child(6) .project-image {
+            background-image: url('/Images/KAWAI.jpg');
+            background-color: #ff6e7f;
+        }
+
+        .project-card:nth-child(11) .project-image {
+            background-image: url('/Images/DrCube.jpg');
+            background-color: #e0c3fc;
+        }
+
+        .project-card:nth-child(7) .project-image {
+            background-image: url('/Images/MEDCafe.jpg');
+            background-color: #f5f7fa;
         }
 
         .project-card:nth-child(13) .project-image {
-            background-image: url('Images/White.jpg');
+            background-image: url('/Images/White.jpg');
+            background-color: #c3cfe2;
         }
 
         .project-card:nth-child(14) .project-image {
-            background-image: url('Images/Artboard.jpg');
+            background-image: url('/Images/Artboard.jpg');
+            background-color: #667eea;
         }
 
         .project-overlay {
@@ -622,7 +636,7 @@
             transform: translateY(-2px) !important;
         }
 
-        /* Logo Slider Section - IMPROVED */
+        /* Logo Slider Section */
         .logo-slider-section {
             padding: 6rem 0;
             position: relative;
@@ -633,27 +647,16 @@
 
         .logo-slider-section h2 {
             font-family: 'Bebas Neue', sans-serif;
-            font-size: clamp(1.5rem, 5vw, 3rem);
+            font-size: clamp(2rem, 5vw, 3rem);
             text-align: center;
             margin-bottom: 3rem;
             letter-spacing: 2px;
-            padding: 0 2rem;
-        }
-
-        .logo-slider-wrapper {
-            overflow: hidden;
-            position: relative;
-            width: 100%;
-            mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
-            -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
         }
 
         .logo-slider {
             display: flex;
-            gap: 3rem;
-            width: max-content;
-            animation: scroll 50s linear infinite;
-            will-change: transform;
+            animation: scroll 30s linear infinite;
+            gap: 4rem;
         }
 
         .logo-slider:hover {
@@ -661,35 +664,31 @@
         }
 
         @keyframes scroll {
-            from {
+            0% {
                 transform: translateX(0);
             }
-            to {
-                transform: translateX(calc(-50%));
+            100% {
+                transform: translateX(-50%);
             }
         }
 
         .logo-item {
-            min-width: 180px;
-            width: 180px;
-            height: 90px;
+            min-width: 200px;
+            height: 100px;
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 1.5rem;
+            padding: 2rem;
             border: 1px solid rgba(255, 255, 255, 0.1);
             background: rgba(0, 0, 0, 0.3);
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             position: relative;
             overflow: hidden;
-            flex-shrink: 0;
         }
 
         .logo-item img {
             max-width: 80%;
-            max-height: 55px;
-            width: auto;
-            height: auto;
+            max-height: 60px;
             object-fit: contain;
             position: relative;
             z-index: 2;
@@ -708,7 +707,7 @@
 
         .logo-item:hover {
             border-color: var(--accent);
-            transform: scale(1.05) translateY(-5px);
+            transform: scale(1.1) translateY(-5px);
             box-shadow: 0 15px 40px rgba(255, 51, 102, 0.3);
         }
 
@@ -719,6 +718,10 @@
         .logo-item:hover img {
             filter: brightness(0) invert(1);
             transform: scale(1.1);
+        }
+
+        .logo-item span {
+            display: none;
         }
 
         /* About Section */
@@ -989,48 +992,6 @@
             .scroll-hint {
                 font-size: 0.75rem;
             }
-
-            /* Mobile logo slider improvements */
-            .logo-slider-section {
-                padding: 4rem 0;
-            }
-
-            .logo-slider {
-                gap: 2rem;
-                animation: scroll 40s linear infinite;
-            }
-
-            .logo-item {
-                min-width: 140px;
-                width: 140px;
-                height: 75px;
-                padding: 1rem;
-            }
-
-            .logo-item img {
-                max-height: 45px;
-            }
-
-            .logo-item:hover {
-                transform: scale(1.02);
-            }
-        }
-
-        @media (max-width: 480px) {
-            .logo-slider {
-                gap: 1.5rem;
-            }
-
-            .logo-item {
-                min-width: 120px;
-                width: 120px;
-                height: 65px;
-                padding: 0.8rem;
-            }
-
-            .logo-item img {
-                max-height: 40px;
-            }
         }
     </style>
 </head>
@@ -1128,38 +1089,36 @@
 
     <section class="logo-slider-section">
         <h2>Trusted By Leading Brands</h2>
-        <div class="logo-slider-wrapper">
-            <div class="logo-slider">
-                <div class="logo-item"><img src="Logos/AyaSofia.png" alt="Aya Sofia"></div>
-                <div class="logo-item"><img src="Logos/Jovial.png" alt="Jovial"></div>
-                <div class="logo-item"><img src="Logos/DrHadeel.png" alt="Dr Hadeel"></div>
-                <div class="logo-item"><img src="Logos/SkillLabs.png" alt="Skill Labs"></div>
-                <div class="logo-item"><img src="Logos/Catalyst.png" alt="Catalyst"></div>
-                <div class="logo-item"><img src="Logos/KhanAlSaboun.png" alt="Khan Al Saboun"></div>
-                <div class="logo-item"><img src="Logos/DrEnglish.png" alt="Dr English"></div>
-                <div class="logo-item"><img src="Logos/AlMuhandisExpress.png" alt="Al Muhandis Express"></div>
-                <div class="logo-item"><img src="Logos/Kawai.png" alt="KAWAI"></div>
-                <div class="logo-item"><img src="Logos/DrCube.png" alt="Dr Cube"></div>
-                <div class="logo-item"><img src="Logos/Artboard 13@4x.png" alt="Artboard"></div>
-                <div class="logo-item"><img src="Logos/MNU.png" alt="MNU"></div>
-                <div class="logo-item"><img src="Logos/White.png" alt="White"></div>
-                <div class="logo-item"><img src="Logos/MED Cafe.png" alt="MED Cafe"></div>
-                <!-- Duplicate for seamless loop -->
-                <div class="logo-item"><img src="Logos/AyaSofia.png" alt="Aya Sofia"></div>
-                <div class="logo-item"><img src="Logos/Jovial.png" alt="Jovial"></div>
-                <div class="logo-item"><img src="Logos/DrHadeel.png" alt="Dr Hadeel"></div>
-                <div class="logo-item"><img src="Logos/SkillLabs.png" alt="Skill Labs"></div>
-                <div class="logo-item"><img src="Logos/Catalyst.png" alt="Catalyst"></div>
-                <div class="logo-item"><img src="Logos/KhanAlSaboun.png" alt="Khan Al Saboun"></div>
-                <div class="logo-item"><img src="Logos/DrEnglish.png" alt="Dr English"></div>
-                <div class="logo-item"><img src="Logos/AlMuhandisExpress.png" alt="Al Muhandis Express"></div>
-                <div class="logo-item"><img src="Logos/Kawai.png" alt="KAWAI"></div>
-                <div class="logo-item"><img src="Logos/DrCube.png" alt="Dr Cube"></div>
-                <div class="logo-item"><img src="Logos/Artboard 13@4x.png" alt="Artboard"></div>
-                <div class="logo-item"><img src="Logos/MNU.png" alt="MNU"></div>
-                <div class="logo-item"><img src="Logos/White.png" alt="White"></div>
-                <div class="logo-item"><img src="Logos/MED Cafe.png" alt="MED Cafe"></div>
-            </div>
+        <div class="logo-slider">
+            <div class="logo-item"><img src="Logos/AyaSofia.png" alt="Aya Sofia"></div>
+            <div class="logo-item"><img src="Logos/Jovial.png" alt="Jovial"></div>
+            <div class="logo-item"><img src="Logos/DrHadeel.png" alt="Dr Hadeel"></div>
+            <div class="logo-item"><img src="Logos/SkillLabs.png" alt="Skill Labs"></div>
+            <div class="logo-item"><img src="Logos/Catalyst.png" alt="Catalyst"></div>
+            <div class="logo-item"><img src="Logos/KhanAlSaboun.png" alt="Khan Al Saboun"></div>
+            <div class="logo-item"><img src="Logos/DrEnglish.png" alt="Dr English"></div>
+            <div class="logo-item"><img src="Logos/AlMuhandisExpress.png" alt="Al Muhandis Express"></div>
+            <div class="logo-item"><img src="Logos/Kawai.png" alt="KAWAI"></div>
+            <div class="logo-item"><img src="Logos/DrCube.png" alt="Dr Cube"></div>
+            <div class="logo-item"><img src="Logos/Artboard 13@4x.png" alt="Artboard"></div>
+            <div class="logo-item"><img src="Logos/MNU.png" alt="MNU"></div>
+            <div class="logo-item"><img src="Logos/White.png" alt="White"></div>
+            <div class="logo-item"><img src="Logos/MED Cafe.png" alt="MED Cafe"></div>
+            <!-- Duplicate for seamless loop -->
+            <div class="logo-item"><img src="Logos/AyaSofia.png" alt="Aya Sofia"></div>
+            <div class="logo-item"><img src="Logos/Jovial.png" alt="Jovial"></div>
+            <div class="logo-item"><img src="Logos/DrHadeel.png" alt="Dr Hadeel"></div>
+            <div class="logo-item"><img src="Logos/SkillLabs.png" alt="Skill Labs"></div>
+            <div class="logo-item"><img src="Logos/Catalyst.png" alt="Catalyst"></div>
+            <div class="logo-item"><img src="Logos/KhanAlSaboun.png" alt="Khan Al Saboun"></div>
+            <div class="logo-item"><img src="Logos/DrEnglish.png" alt="Dr English"></div>
+            <div class="logo-item"><img src="Logos/AlMuhandisExpress.png" alt="Al Muhandis Express"></div>
+            <div class="logo-item"><img src="Logos/Kawai.png" alt="KAWAI"></div>
+            <div class="logo-item"><img src="Logos/DrCube.png" alt="Dr Cube"></div>
+            <div class="logo-item"><img src="Logos/Artboard 13@4x.png" alt="Artboard"></div>
+            <div class="logo-item"><img src="Logos/MNU.png" alt="MNU"></div>
+            <div class="logo-item"><img src="Logos/White.png" alt="White"></div>
+            <div class="logo-item"><img src="Logos/MED Cafe.png" alt="MED Cafe"></div>
         </div>
     </section>
 
@@ -1220,37 +1179,24 @@
             }, 100);
         });
 
-        // Custom cursor
+        // Custom cursor - MUCH FASTER RESPONSE
         const cursor = document.querySelector('.cursor');
         const follower = document.querySelector('.cursor-follower');
 
         let mouseX = 0, mouseY = 0;
-        let cursorX = 0, cursorY = 0;
-        let followerX = 0, followerY = 0;
 
         document.addEventListener('mousemove', (e) => {
             mouseX = e.clientX;
             mouseY = e.clientY;
+            
+            // Main cursor follows instantly
+            cursor.style.left = mouseX + 'px';
+            cursor.style.top = mouseY + 'px';
+            
+            // Follower has slight delay
+            follower.style.left = mouseX + 'px';
+            follower.style.top = mouseY + 'px';
         });
-
-        function animate() {
-            // Cursor follows mouse directly with very fast response
-            cursorX += (mouseX - cursorX) * 0.8;
-            cursorY += (mouseY - cursorY) * 0.8;
-            
-            cursor.style.left = cursorX + 'px';
-            cursor.style.top = cursorY + 'px';
-
-            // Follower with moderate delay
-            followerX += (mouseX - followerX) * 0.3;
-            followerY += (mouseY - followerY) * 0.3;
-            
-            follower.style.left = followerX + 'px';
-            follower.style.top = followerY + 'px';
-
-            requestAnimationFrame(animate);
-        }
-        animate();
 
         // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -1456,7 +1402,6 @@
             const walk = (x - startX) * 2;
             projectGrid.scrollLeft = scrollLeft - walk;
         });
-
     </script>
 </body>
 </html>
